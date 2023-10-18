@@ -1,0 +1,19 @@
+{
+  "name": "create_account",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.18.2"
+  },
+  "dependencies": {
+    "mongoose": "^7.6.3",
+    "mongosh": "^2.0.2",
+    "nodemon": "^3.0.1"
+  }
+}

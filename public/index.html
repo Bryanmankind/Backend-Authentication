@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="create.css">
+    <title>My Portal</title>
+    <script src="https://kit.fontawesome.com/7ba47254ee.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div class="Create-Acc">
+        <h4>Fill this form.</h4>
+        <form action="register">
+          <input type="text" placeholder="Username" required />
+          <input
+            type="password"
+            placeholder="Password"
+            required
+          />
+          <input type="text" placeholder="Email" required />
+          <button type="submit" class="Acc-but">Create Account</button>
+        </form>
+    </div>
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="accSetup">
+            <h1> Sign In </h1>
+        </div>
+        <div class="inputData">
+            <form>
+                <div class="icon">
+                    <i class="fa-solid fa-user"></i><input type="text" placeholder="username" required>
+                </div>
+                <div class="icon">
+                    <i class="fa-solid fa-lock"></i><input type="password" placeholder="password"  required>
+                </div>
+                <div class="checkbox-1">
+                    <input type="checkbox" class="checkbox" ><h4>Remember me</h4>
+                </div>
+                <button type="submit">Login</button>  
+            </form> 
+        </div>
+        <div class="footer">
+            <div class="Signin">
+                <p> I don't have an account? </p>
+                <ul>
+                    <li><a id="signin">Sign In</a></li>
+                </ul>
+            </div>
+            
+            <div class="loginIcon">
+                <a href="">
+                <i class="fa-brands fa-square-google-plus"></i>
+                </a>
+                <a href="">
+                <i class="fa-brands fa-square-github"></i>
+                </a>
+            </div>
+            <ul><li><a href="">Forgot your password</a></li></ul>
+        </div>
+    </div>
+    <script src="create.js"></script>
+</body>
+</html>
