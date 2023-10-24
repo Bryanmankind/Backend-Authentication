@@ -8,14 +8,14 @@ const publicPath = path.join(__dirname, './public');
 
 const app = express()
 app.use(express.static(publicPath));
-app.use(express.static(templatePath))
 app.use(express.json())
 app.set('view engine', "hbs")
 app.set('views', templatePath)
 app.use(express.urlencoded({extended: false}))
 
 
-app.get('/', (req,res)=> {
+app.get('/', (req,res) => {
+
     res.render("index")
 })
 
@@ -29,15 +29,14 @@ app.post('/CreateAcc', async(req, res) => {
         password: req.body.password,
         email: req.body.email
     }
-    console.log(data);
     await collection.insertMany([data])
 
-    res.render('Homepage')
+    res.render('index')
 })
 
-app.get('/homepage', (req,res)=> {
-    res.render("homepage")
-})
+// app.get('/homepage', (req,res)=> {
+//     res.render("homepage")
+// })
 app.listen(5000, () => {
     console.log('server listening on post 5000...')
-}) 
+})   
