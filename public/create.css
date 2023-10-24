@@ -147,7 +147,7 @@ button {
 }
 
 .Create-Acc{
-    display: none;
+    display: block;
     color:black;
     background-color: rgba(255, 255, 255, 0.5);
     width: 400px;

@@ -9,43 +9,29 @@
 
 </head>
 <body>
-    <div class="Create-Acc">
-        <h4>Fill this form.</h4>
-        <form action="register">
-          <input type="text" placeholder="Username" required />
-          <input
-            type="password"
-            placeholder="Password"
-            required
-          />
-          <input type="text" placeholder="Email" required />
-          <button type="submit" class="Acc-but">Create Account</button>
-        </form>
-    </div>
-    <div class="overlay"></div>
     <div class="container">
         <div class="accSetup">
             <h1> Sign In </h1>
         </div>
         <div class="inputData">
-            <form>
+            <form action="/index" method="post">
                 <div class="icon">
-                    <i class="fa-solid fa-user"></i><input type="text" placeholder="username" required>
+                    <i class="fa-solid fa-user"></i><input type="text" name="username" placeholder="username" required>
                 </div>
                 <div class="icon">
-                    <i class="fa-solid fa-lock"></i><input type="password" placeholder="password"  required>
+                    <i class="fa-solid fa-lock"></i><input type="password" name="password" placeholder="password"  required>
                 </div>
                 <div class="checkbox-1">
                     <input type="checkbox" class="checkbox" ><h4>Remember me</h4>
                 </div>
                 <button type="submit">Login</button>  
-            </form> 
+            </form>   
         </div>
         <div class="footer">
             <div class="Signin">
                 <p> I don't have an account? </p>
                 <ul>
-                    <li><a id="signin">Sign In</a></li>
+                    <li><a href="/CreateAcc">Sign In</a></li>
                 </ul>
             </div>
             

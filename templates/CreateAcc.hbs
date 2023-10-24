@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="create.css">
+    <title>My Portal</title>
+    <script src="https://kit.fontawesome.com/7ba47254ee.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div class="Create-Acc">
+        <h4>Fill this form.</h4>
+        <form action="/createAcc" method="post">
+          <input type="text" name="username" placeholder="Username" required />
+          <input
+            type="password" name="password"
+            placeholder="Password"
+            required
+          />
+          <input type="text" name="email" placeholder="Email" required />
+          <button type="submit" class="Acc-but">Create Account</button>
+        </form>
+    </div>
+    <script src="create.js"></script>
+</body>
+</html>
