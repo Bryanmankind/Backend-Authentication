@@ -38,6 +38,11 @@ app.use(flash())
 
 passportInitialize(passport)
 
+app.use((req, res, next) => {
+    res.locals.errorMessage = req.flash('error');
+    next();
+  });
+
 app.get('/', (req,res) => {
 
     res.render("index")

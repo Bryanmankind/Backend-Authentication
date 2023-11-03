@@ -10,6 +10,11 @@
 </head>
 <body>
     <div class="container">
+        {{#if errorMessage}}
+        <div class="alert alert-danger">
+            {{errorMessage}}
+        </div>
+            {{/if}}
         <div class="accSetup">
             <h1> Sign In </h1>
         </div>
