@@ -1,4 +1,6 @@
-
+if (process.env.NODE_ENV !== "production") {
+    require ('dotenv').config()
+}
 
 const express = require ('express')
 const path = require('path')
@@ -9,33 +11,48 @@ const publicPath = path.join(__dirname, './public');
 const bcrypt = require('bcrypt')
 const passportInitialize = require('./passportConfig')
 const flash = require ('express-flash')
-const sesson = require ('express-session')
+const session = require ('express-session')
+const passport = require('passport')
+
 
 
 const app = express()
-app.use(flash())
+app.use(express.urlencoded({extended: false}))
+
 app.use(session({
-    secret: process.env.SESSION.SECRET,
-    resve: false,
-    saveInitialized: false
-}))
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false
+}));
+
 app.use(express.static(publicPath));
 app.use(express.json())
 app.set('view engine', "hbs")
 app.set('views', templatePath)
-app.use(express.urlencoded({extended: false}))
-app.use(passportinitialized())
-app.use(passort.session())
- 
+app.use(passport.initialize())
+app.use(passport.session())
+app.use(flash())
+
+
+
+
+passportInitialize(passport)
 
 app.get('/', (req,res) => {
 
     res.render("index")
 })
 
+
 app.get('/CreateAcc', (req,res) => {
     res.render('CreateAcc')
 })
+
+app.post ('/index', passport.authenticate ("local", {
+    successRedirect: "/Homepage",
+    failureRedirect: "/",
+    failureFlash: true
+}))
 
 app.post('/CreateAcc', async(req, res) => {
     const saltRound = 10;
@@ -51,9 +68,10 @@ app.post('/CreateAcc', async(req, res) => {
     res.render('index')
 })
 
-// app.get('/homepage', (req,res)=> {
-//     res.render("homepage")
-// })
+app.get('/Homepage', (req,res)=> {
+    res.render("Homepage")
+})
+
 app.listen(5000, () => {
     console.log('server listening on post 5000...')
 })   
